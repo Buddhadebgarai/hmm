@@ -2,7 +2,7 @@ from hmmlearn import hmm
 import numpy as np
 import math
 from state import STATE_MATRIX
-from observation import emm_dict, OBS_MATRIX
+from observation import emm_dict, OBS_MATRIX, ods_arr
 
 
 model = hmm.MultinomialHMM(n_components=27)
