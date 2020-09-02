@@ -5,8 +5,8 @@ from utils import state_calculator
 
 current_path = os.getcwd()
 filename = "sachin_rt_tweets.csv"
-df = pd.read_csv(f"{current_path}\\data\\state\\{filename}").dropna()
-
+df2 = pd.read_csv(f"{current_path}\\data\\state\\{filename}").dropna()
+df=df2[2:20]
 print("Generating state matrix...")
 
 LIKE_LOW_RANGE = 100
