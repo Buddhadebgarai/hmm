@@ -6,8 +6,8 @@ from utils import symbol_calculator
 
 current_path = os.getcwd()
 filename = "sachin_rt_tweets.csv"
-df = pd.read_csv(f"{current_path}\\data\\observation\\{filename}").dropna()
-
+df2 = pd.read_csv(f"{current_path}\\data\\observation\\{filename}").dropna()
+df=df[2:24]
 original = df["reply_count"] * df["tweet_count"] * df["quote_count"]
 spreader = df["mention_count"] * df["retweet_count"]
 reputed = df["Fav_count"] * df["retweet_by_other_count"]
