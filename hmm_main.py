@@ -45,7 +45,7 @@ for filename in files:
     model.transmat_ = state_matrix_output
     model.emissionprob_ = obs_matrix_output
 
-    test_split = int(len(obs_arr) * 0.2)
+    test_split = int(len(obs_arr) * 0.8)
     logprob, seq = model.decode(np.array([obs_arr[test_split:]]).transpose())
 
     print("math.exp(logprob) = ", math.exp(logprob))
