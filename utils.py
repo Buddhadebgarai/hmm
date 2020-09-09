@@ -1,5 +1,4 @@
-import pandas as pd
-
+import numpy as np
 
 def state_calculator(arr, low, mid):
     state_arr = []
@@ -27,10 +26,16 @@ def symbol_calculator(arr, a, b, c):
     return output
 
 
-def export_csv(data, filename, output_path):
-    d = {}
-    for i in data:
-        d[i] = i
-    df = pd.DataFrame(data=d)
-    df.to_csv(f"{output_path}//{filename}")
-    print("Csv file created")
+def adjust_state_matrix(state_matrix):
+    print("\n\nSum-----------------")
+    # print(state_matrix)
+    for i in range(27):
+        if sum(state_matrix[i]) < 1:
+            for j in range(27):
+                state_matrix[i, j] = 1/27
+        elif sum(state_matrix[i]) > 1:
+            for j in range(27):
+                state_matrix[i, j] = 1/27
+    # print(state_matrix)
+    print(np.sum(state_matrix, axis=1))
+    return state_matrix
